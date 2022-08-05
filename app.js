@@ -28,3 +28,41 @@ form.addEventListener('submit', (e) => {
 
     displayMonsters();
 });
+
+function displayMonsters() {
+    monsterListEl.textContent = '';
+
+    for (let monster of monster) {
+        const monsterEl = renderMonster(monster);
+
+        if(monster.hp > 0) {
+          monsterEl.addEventListener('click', => {
+
+            if (Math.random() < .33) {
+              monster.hp--;
+              alert('you hit ' + monster.name);
+            } else {
+              alert('you tried to hit ' + monster.name + ' but missed');
+            }
+
+            if (Math.random() < .5) {
+              playerHP--;
+              alert(monster.name + ' hit you');
+            } else {
+              alert(monster.name + 'tried to hit you but missed');
+            }
+            if (monster.hp === 0) {
+              defeatedMonstersCount++;
+            }
+            if (playHP === 0) {
+              adventureImgEl.classList.add('game-over')
+              alert('Game-Over! You still owe Tom Nook money');
+            }
+            fighterHPEl.textContent = playerHP;
+            defeatedNumberEl.textContent = defeatedMonstersCount;
+
+            displayMonsters();
+          })
+        }
+    }
+}
