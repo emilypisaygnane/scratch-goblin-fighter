@@ -1,7 +1,7 @@
 :root {
-    --background: rgb(224, 234, 247);
+    --background: white;
     --header-background: white;
-    --footer-background: rgb(243, 242, 242);
+    --footer-background: white;
 }
 
 body {
@@ -17,7 +17,7 @@ header {
     top: 0;
     display: flex;
     align-items: center;
-    background-color: var(--header-background);
+    background-color: rgb(201, 228, 247)
 }
 
 main {
@@ -31,5 +31,19 @@ footer {
     font-size: .8em;
     display: flex;
     justify-content: flex-end;
-    background-color: var(--footer-background);
+    background-color: rgb(247, 247, 130);
+}
+h2 {
+    font-size: 1.5rem;
+    font-weight: 15px;
+}
+
+.monsters, .fighter {
+    display: flex;
+    margin: 5px;
+    padding: 10px;
+}
+
+#fighter-img {
+    display: flex;
 }

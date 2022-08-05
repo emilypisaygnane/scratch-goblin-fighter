@@ -5,27 +5,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="icon" type="image/x-icon" href="/assets/alchemy-favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap">
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/global.css" />
-    <title>Web App</title>
+    <title>Animal Crossing Fighter</title>
 </head>
 
 <body>
     <header>
-        <img src="/assets/html_css_js.png">
-        <h1>Web App</h1>
+        <h2>OH NO! You owe Tom Nook bells! Better watch out!<h2>
+    
     </header>
-
     <main>
+        <div class="fighter-stats">
+            <div class="defeated-monster">
+                <p>You have defeated Tom Nook and his henchmen <span id="defeated-number">0</span> times</p>
+                <div class="defeated-list">
+
+                </div>
+            </div>
+            <div class="fighter">
+                <p>
+                    Your HP:
+                    <span id="fighter-hp">15</span>
+                </p>
+                <img id="fighter-img" src="./assets/Tia.PNG" />
+            
+            </div>
+        </div>
+
+        <div class="monster-stats">
+            <div>
+                <form>
+                    <input name="monster-name"/>
+                    <button>Challenge the monster!</button>
+                </form>
+                <div class="monsters">
+                </div>
+            </div>
+        </div>
 
     </main>
 
-    <footer>&copy;2022 Software Developer</footer>
+    <footer>&copy;2022 Emily Pisaygnane</footer>
 
     <script type="module" src="app.js"></script>
 </body>

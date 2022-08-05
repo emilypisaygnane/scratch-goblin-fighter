@@ -1,8 +1,73 @@
-// import functions and grab DOM elements
+import { renderMonster } from './render-monster.js';
 
-// let state
+const defeatedNumberEl = document.querySelector('#defeated-number');
+const fighterHPEl = document.querySelector('#fighter-hp');
+const fighterImgEl = document.querySelector('#fighter-img');
+const monsterListEl = document.querySelector('.monsters');
+const form = document.querySelector('form');
 
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
+let defeatedMonstersCount = 0;
+let playerHP = 15;
+let monsters = [
+    { name: 'Tom Nook', hp: 8 },
+    { name: 'Mr. Resetti', hp: 6 },
+    { name: 'Isabelle', hp: 3 },
+];
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const data = new FormData(form);
+
+    const monsterName = data.get('monster-name');
+
+    const newMonster = {
+        name: monsterName,
+        hp: Math.ceil(Math.random() * 8),
+    };
+
+    monsters.push(newMonster);
+
+    displayMonsters();
+});
+
+function displayMonsters() {
+    monsterListEl.textContent = '';
+
+    for (let monster of monsters) {
+        const monsterEl = renderMonster(monster);
+
+        if (monster.hp > 0) {
+            monsterEl.addEventListener('click', () => {
+                if (Math.random() < .75) {
+                    monster.hp--;
+                    alert('You hit ' + monster.name);
+                } else {
+                    alert('You tried to hit ' + monster.name + ' but missed');
+                }
+                if (Math.random() < .5) {
+                    playerHP--;
+                    alert(monster.name + ' hit you');
+                } else {
+                    alert(monster.name + ' tried to hit you but missed');
+                }
+                if (monster.hp === 0) {
+                    defeatedMonstersCount++;
+                    alert('WOOHOO! You have defeated a monster, and have been rewarded bells');
+                }
+                if (playerHP === 0) {
+                    fighterImgEl.classList.add('game-over');
+                    alert('Game-Over! You still owe Tom Nook bells! Get your affairs in order!');
+                }
+                fighterHPEl.textContent = playerHP;
+                defeatedNumberEl.textContent = defeatedMonstersCount;
+
+                displayMonsters();
+            });
+
+        }
+        monsterListEl.append(monsterEl);
+    }
+}
+
+displayMonsters();
