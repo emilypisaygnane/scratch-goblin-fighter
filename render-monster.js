@@ -1,4 +1,4 @@
-export function renderFighter(monsterData) {
+export function renderMonster(monsterData) {
     const monsterEl = document.createElement('div');
     const faceEl = document.createElement('img');
     const nameEl = document.createElement('p');
@@ -9,7 +9,7 @@ export function renderFighter(monsterData) {
     nameEl.textContent = monsterData.name;
     hpEl.textContent = monsterData.hp < 0 ? 0 : monsterData.hp;
 
-    faceEl.src = monsterData.hp > 0 ? `./assets/tom-nook.PNG` : `./assets/tom-nook-money.PNG`;
+    faceEl.src = monsterData.hp > 0 ? './assets/tom-nook.png' : './assets/tom-nook-money.png';
 
     if (monsterData.hp < 0) {
         monsterEl.classlist.add('money');
