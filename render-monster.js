@@ -4,7 +4,7 @@ export function renderMonster(monsterData) {
     const nameEl = document.createElement('p');
     const hpEl = document.createElement('p');
 
-    monsterEl.classlist.add('monster');
+    monsterEl.classList.add('monsters');
 
     nameEl.textContent = monsterData.name;
     hpEl.textContent = monsterData.hp < 0 ? 0 : monsterData.hp;

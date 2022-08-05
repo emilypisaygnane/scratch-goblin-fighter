@@ -1,15 +1,18 @@
 import { renderMonster } from './render-monster.js';
+
 const defeatedNumberEl = document.querySelector('#defeated-number');
 const fighterHPEl = document.querySelector('#fighter-hp');
 const fighterImgEl = document.querySelector('#fighter-img');
-const form = document.querySelector('form');
 const monsterListEl = document.querySelector('.fighter');
+
+const form = document.querySelector('form');
 
 let defeatedMonstersCount = 0;
 let playerHP = 15;
 let monsters = [
     { name: 'Tom Nook', hp: 8 },
     { name: 'Mr. Resetti', hp: 6 },
+    { name: 'Isabelle', hp: 3 },
 ];
 
 form.addEventListener('submit', (e) => {
@@ -39,22 +42,23 @@ function displayMonsters() {
             monsterEl.addEventListener('click', () => {
                 if (Math.random() < .75) {
                     monster.hp--;
-                    alert('you hit ' + monster.name);
+                    alert('You hit ' + monster.name);
                 } else {
-                    alert('you tried to hit ' + monster.name + ' but missed');
+                    alert('You tried to hit ' + monster.name + ' but missed');
                 }
                 if (Math.random() < .5) {
                     playerHP--;
                     alert(monster.name + ' hit you');
                 } else {
-                    alert(monster.name + 'tried to hit you but missed');
+                    alert(monster.name + ' tried to hit you but missed');
                 }
                 if (monster.hp === 0) {
                     defeatedMonstersCount++;
+                    alert('WOOHOO! You have defeated a monster, and have been rewarded bells');
                 }
                 if (playerHP === 0) {
                     fighterImgEl.classList.add('game-over');
-                    alert('Game-Over! You still owe Tom Nook money');
+                    alert('Game-Over! You still owe Tom Nook bells! Get your affairs in order!');
                 }
                 fighterHPEl.textContent = playerHP;
                 defeatedNumberEl.textContent = defeatedMonstersCount;

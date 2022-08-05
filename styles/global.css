@@ -37,3 +37,13 @@ h2 {
     font-size: 1.5rem;
     font-weight: 15px;
 }
+
+.monsters, .fighter {
+    display: flex;
+    margin: 5px;
+    padding: 10px;
+}
+
+#fighter-img {
+    display: flex;
+}
