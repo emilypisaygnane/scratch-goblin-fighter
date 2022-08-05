@@ -12,17 +12,37 @@
         href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap">
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/global.css" />
-    <title>Web App</title>
+    <title>Animal Crossing Fighter</title>
 </head>
 
 <body>
-    <header>
-        <img src="/assets/html_css_js.png">
-        <h1>Web App</h1>
-    </header>
-
     <main>
+        <div class="fighter-stats">
+            <div class="defeated-monster">
+                <p>You have defeated <span id="defeated-number">0</span> Tom Nook</p>
+                <div class="defeated-list">
 
+                </div>
+            </div>
+            <div class="fighter">
+                <p>Your HP:
+                    <span id="fighter-hp">15</span>
+                </p>
+                    <img id="fighter-img" src="./assets/Tia.png"/>
+            </div>
+        </div>
+        <div class="monster-stats">
+            <div>
+                <form>
+                    <input name="monster-name"/>
+                    <button>Challenge the MONSTER!</button>
+                </form>
+                <div class="monsters">
+
+
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer>&copy;2022 Software Developer</footer>
