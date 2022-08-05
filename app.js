@@ -1,5 +1,7 @@
 // import functions and grab DOM elements
-
+import { renderFighter } from "./render-monster.js";
+const defeatedNumberEl = document.querySelector('#defeated-number');
+const fighter
 // let state
 
 // set event listeners 
