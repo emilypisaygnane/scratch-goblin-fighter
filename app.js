@@ -3,8 +3,7 @@ import { renderMonster } from './render-monster.js';
 const defeatedNumberEl = document.querySelector('#defeated-number');
 const fighterHPEl = document.querySelector('#fighter-hp');
 const fighterImgEl = document.querySelector('#fighter-img');
-const monsterListEl = document.querySelector('.fighter');
-
+const monsterListEl = document.querySelector('.monsters');
 const form = document.querySelector('form');
 
 let defeatedMonstersCount = 0;

@@ -10,7 +10,6 @@ export function renderMonster(monsterData) {
     hpEl.textContent = monsterData.hp < 0 ? 0 : monsterData.hp;
 
     faceEl.src = monsterData.hp > 0 ? './assets/tom-nook.png' : './assets/tom-nook-money.png';
-
     if (monsterData.hp < 0) {
         monsterEl.classlist.add('money');
     }
